@@ -1,9 +1,6 @@
 <?php
   include '../includes/config.php';
-  include '../includes/handle_form.php';
-  
-  $query = $pdo->query('SELECT * FROM users');
-  $users = $query->fetchAll();
+  include '../includes/handle_signup.php';
 ?>
 
 <!DOCTYPE html>
@@ -21,11 +18,11 @@
   <a href="../index.php">Accueil</a>
 
   <?php foreach($errorMessages as $message): ?>
-    <p style="color: red;"><?= $message ?></p>
+    <p class="errorMessages"><?= $message ?></p>
   <?php endforeach; ?>
 
   <?php foreach($successMessages as $message): ?>
-    <p style="color: green;"><?= $message ?></p>
+    <p class="successMessages"><?= $message ?></p>
   <?php endforeach; ?>
   
   <form action="#" method="post">
@@ -46,7 +43,7 @@
     <br>
 
     <label>
-        <input type="radio" name="civility" value="Mister" <?= $_POST['civility'] == 'Mister' ? 'checked' : '' ?>>
+        <input type="radio" name="civility" value="mister" <?= $_POST['civility'] == 'Mister' ? 'checked' : '' ?>>
         Mister
     </label>
 

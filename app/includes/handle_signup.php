@@ -56,6 +56,8 @@ if(!empty($_POST))
   // Success
   if(empty($errorMessages))
   {
+    $hash = password_hash($password, PASSWORD_DEFAULT);
+
     $prepare = $pdo->prepare('
       INSERT INTO 
         users (login, password, age, civility)
@@ -64,7 +66,7 @@ if(!empty($_POST))
     ');
 
     $prepare->bindValue('login', $login);
-    $prepare->bindValue('password', $password);
+    $prepare->bindValue('password', $hash);
     $prepare->bindValue('age', $age);
     $prepare->bindValue('civility', $civility);
 

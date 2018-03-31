@@ -1,6 +1,3 @@
-a {
-  text-decoration: none;
-}
 div.popup {
   position: fixed;
   top: 50%;
@@ -17,10 +14,4 @@ div.popup.show {
 div.popup img.close {
   margin-left: 90%;
   cursor: pointer;
-}
-p.errorMessages {
-  color: #f00;
-}
-p.successMessages {
-  color: #008000;
 }

@@ -16,7 +16,7 @@ gulp.task('browserSync', () => {
 		server: {
 			baseDir: 'app'
 		},
-		browser: 'google chrome'
+		browser: 'chrome'
 	})
 })
 
@@ -30,11 +30,15 @@ gulp.task('stylus', () => {
 		}))
 })
 
+gulp.task('watch:stylus', ['stylus'], () => {
+	gulp.watch('app/styles/stylus/**/*.styl', ['stylus'])
+})
+
 // Task to automatically sync browser when a changes is made on a styl, js or html file in the app directory
 gulp.task('watch', ['browserSync', 'stylus'], () => {
 	gulp.watch('app/styles/stylus/**/*.styl', ['stylus'])
+	gulp.watch('app/*.php', browserSync.reload)
 	gulp.watch('app/scripts/**/*.js', browserSync.reload)
-	gulp.watch('app/*.html', browserSync.reload)
 })
 
 // Task to concat and minify css & js files and transfer them to dist directory

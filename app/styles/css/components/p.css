@@ -1,0 +1,6 @@
+p.errorMessages {
+  color: #f00;
+}
+p.successMessages {
+  color: #008000;
+}
