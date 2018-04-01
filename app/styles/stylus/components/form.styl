@@ -1,0 +1,48 @@
+form 
+  position relative
+  height 100%
+  width 100%
+  
+  .formContainer 
+    position absolute
+    left 50%
+    top 50%
+    box-sizing border-box
+    padding 0 30px
+    display flex
+    flex-direction column
+    justify-content center
+  
+    &.taskformContainer
+      width w = 580px
+      height h = 680px
+      margin-left -(w/2)
+      margin-top -(h/2)
+    
+    &.signupformContainer
+      width w = 500px
+      height h = 600px
+      margin-left -(w/2)
+      margin-top -(h/2)
+
+    &.signinformContainer
+      width w = 500px
+      height h = 350px
+      margin-left -(w/2)
+      margin-top -(h/2)   
+
+    input, textarea
+      margin-top 20px
+      margin-bottom 5px
+      font-family core_font
+      border-radius 5px
+      border none
+
+      &[type='submit']
+        padding 5px
+        font-family title_font
+        font-size 20px
+    
+    label, p
+      font-family core_font
+      color pinkish

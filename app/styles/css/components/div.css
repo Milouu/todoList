@@ -1,15 +1,59 @@
+div.headerButtons {
+  position: absolute;
+  right: 30px;
+  margin-top: 35px;
+  display: inline-block;
+  font-family: core_font;
+  color: light_blue;
+}
+div.headerButtons a {
+  color: light_blue;
+}
+div.onePageForms {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  padding: 10px;
+  background-color: light_blue;
+}
+div.onePageForms.signupForm {
+  width: 500px;
+  height: 600px;
+  margin-left: -250px;
+  margin-top: -300px;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+div.onePageForms.signinForm {
+  width: 500px;
+  height: 350px;
+  margin-left: -250px;
+  margin-top: -175px;
+  border-radius: 5px;
+  box-sizing: border-size;
+}
 div.popup {
   position: fixed;
-  top: 30%;
-  left: 40%;
+  top: calc(50% - 700px / 2);
+  left: calc(50% - 600px / 2);
+  width: 600px;
+  height: 700px;
+  padding: 10px;
+  box-sizing: border-box;
   border-radius: 5px;
-  background-color: #ccc;
+  background-color: dark_blue;
   opacity: 0;
   transition: opacity 0.3s ease-in;
   will-change: opacity;
+  z-index: -1;
 }
 div.popup.show {
   opacity: 1;
+  z-index: 98;
+}
+div.popup.show .close {
+  z-index: 99;
+  cursor: pointer;
 }
 div.taskList {
   position: absolute;

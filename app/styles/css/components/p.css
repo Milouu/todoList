@@ -1,5 +1,5 @@
 p {
-  margin: 20px 10px;
+  font-family: core_font;
 }
 p.errorMessages {
   color: #f00;

@@ -4,8 +4,19 @@ a
 
   &.newTaskBtn 
     position absolute 
-    top 50px
-    font-size 20px
-    background-color #ddd
-    border-radius 5px
-    padding 5px
+    top 20%
+    button-size = 220px
+    left 'calc(50% - %s / 2)' % button-size
+    width button-size
+    height 50px
+    display flex
+    text-align center
+    justify-content center
+    align-items center
+    font-family core_font
+    font-size 25px
+    background-color coral
+    border-radius 10px
+    box-sizing border-box 
+    padding 10px
+    color #fefefe

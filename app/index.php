@@ -25,30 +25,38 @@
     <link rel="mask-icon" href="assets/images/safari-pinned-tab.svg" color="#20e905">
     <meta name="theme-color" content="#ffffff">
 
+    <link href="https://fonts.googleapis.com/css?family=Chicle|Roboto+Slab" rel="stylesheet">
+
     <title>todoList</title>
     <link rel="stylesheet" href="styles/css/base/reset.css" />
     <link rel="stylesheet" href="styles/css/main.css" />
   </head>
   <body>
-    
-    
+    <header>
+      <a href="#">
+        <h1>Simple todoList</h1>
+      </a>
+
     <?php
     if(!isset($_SESSION['user']))
     {
     ?>
-      <div>
+      <div class="headerButtons">
         <a href="pages/sign_up.php" class="signupBtn">Sign up</a>
         <a href="pages/sign_in.php" class="signinBtn">Sign in</a> 
       </div> 
+    </header>  
+
     <?php
     }
     else
     {
     ?>
-      <div>
+      <div class="headerButtons">
         <span class="welcome">Welcome <?= $_SESSION['user'] ?></span>
         <a href="functions/deconnection.php">Deconnection</a> 
       </div>
+    </header>  
       <div class="taskList">
         <?php foreach($tasks as $task): ?>
         <div class="task">
@@ -60,6 +68,7 @@
         </div>
         <?php endforeach; ?> 
       </div>
+
     <?php
     }
     ?> 
@@ -67,7 +76,8 @@
     <a href="#" class="newTaskBtn">Create new task</a>
 
     <div class="popup newTask">
-      <img src="assets/images/x.svg" alt="close" class="close closeNewTask">
+      <h2>New Task</h2>
+      <img src="assets/images/xw.svg" alt="close" class="close closeNewTask">
 
       <?php foreach($errorMessages as $message): ?>
       <p class="errorMessages"><?= $message ?></p>
@@ -78,21 +88,24 @@
       <?php endforeach; ?>
 
       <form action="#" method="post">
-        <input id="title" type="text" name="title" value="<?= $_POST['title'] ?>">
-        <label for="title">Title</label>
+        <div class="formContainer taskformContainer">
+          <input id="title" type="text" name="title" value="<?= $_POST['title'] ?>">
+          <label for="title">Title</label>
 
-        <br>
-        
-        <input id="due_date" type="date" name="due_date" value="<?= $_POST['due_date'] ?>">
-        <label for="due_date">Due date</label>
+          <br>
+          
+          <input id="due_date" type="date" name="due_date" value="<?= $_POST['due_date'] ?>">
+          <label for="due_date">Due date</label>
 
-        <br>
-        
-        <textarea name="content" id="content" cols="30" rows="10"><?= $_POST['content'] ?></textarea>
+          <br>
+          
+          <textarea name="content" id="content" cols="30" rows="10"><?= $_POST['content'] ?></textarea>
+          <p>Description</p>
 
-        <br>
+          <br>
 
-        <input type="submit" value="Confirm">
+          <input type="submit" value="Confirm">
+        </div> 
       </form>
     </div>
       

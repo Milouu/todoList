@@ -1,0 +1,52 @@
+form {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+form .formContainer {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  box-sizing: border-box;
+  padding: 0 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+form .formContainer.taskformContainer {
+  width: 580px;
+  height: 680px;
+  margin-left: -290px;
+  margin-top: -340px;
+}
+form .formContainer.signupformContainer {
+  width: 500px;
+  height: 600px;
+  margin-left: -250px;
+  margin-top: -300px;
+}
+form .formContainer.signinformContainer {
+  width: 500px;
+  height: 350px;
+  margin-left: -250px;
+  margin-top: -175px;
+}
+form .formContainer input,
+form .formContainer textarea {
+  margin-top: 20px;
+  margin-bottom: 5px;
+  font-family: core_font;
+  border-radius: 5px;
+  border: none;
+}
+form .formContainer input[type='submit'],
+form .formContainer textarea[type='submit'] {
+  padding: 5px;
+  font-family: title_font;
+  font-size: 20px;
+}
+form .formContainer label,
+form .formContainer p {
+  font-family: core_font;
+  color: pinkish;
+}
