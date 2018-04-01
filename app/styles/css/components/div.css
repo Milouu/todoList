@@ -11,7 +11,7 @@ div.popup {
 div.popup.show {
   opacity: 1;
 }
-div.popup img.close {
+div.popup img.closeNewTask {
   margin-left: 90%;
   cursor: pointer;
 }

@@ -1,4 +1,6 @@
 <?php
+  session_start();
+
   $query = $pdo->query('SELECT * FROM users');
   $users = $query->fetchAll();
 
@@ -14,13 +16,9 @@
   { 
     foreach($users as $user)
     {
-      // echo '<pre>';
-      // var_dump($user->password, $hash);
-      // echo '</pre>';
-     
-
       if($login == $user->login && password_verify($password, $user->password))
       {
+        $_SESSION['id'] = $user->id;
         return 1;
       }
     }
@@ -32,21 +30,16 @@
   {  
     if(connection_check($_POST['login'], $_POST['password'], $users))
     {
-      $successMessages[] = "Connection successfull";
+      // $successMessages[] = 'Connection successfull';
+      $_SESSION['user'] = $_POST['login'];
+      
+      // Redirecting to index.php after successfull connection
+      header('Location: ../index.php');
     }
     else
     {
-      $errorMessages[] = "Login and/or password incorrect";
+      $errorMessages[] = 'Login and/or password incorrect';
    }
-    
-    // if(connection_check($_POST['login'], $_POST['password'], $users))
-    // {
-    //   $successMessages[] = 'Connection successful';
-    // }
-    // else
-    // {
-    //   $errorMessages[] = 'Login and/or password incorrect';
-    // }   
   }
   // Form not sent
   else 

@@ -1,5 +1,14 @@
 a {
   text-decoration: none;
+  margin: 20px 10px;
+}
+a.newTaskBtn {
+  position: absolute;
+  top: 50px;
+  font-size: 20px;
+  background-color: #ddd;
+  border-radius: 5px;
+  padding: 5px;
 }
 div.popup {
   position: fixed;
@@ -14,9 +23,12 @@ div.popup {
 div.popup.show {
   opacity: 1;
 }
-div.popup img.close {
+div.popup img.closeNewTask {
   margin-left: 90%;
   cursor: pointer;
+}
+p {
+  margin: 20px 10px;
 }
 p.errorMessages {
   color: #f00;
