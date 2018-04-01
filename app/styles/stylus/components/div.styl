@@ -19,7 +19,7 @@ div
 
     &.signupForm
       width w = 500px
-      height h =  600px
+      height h = 600px
       margin-left -(w/2)
       margin-top -(h/2)
       border-radius 5px
@@ -31,7 +31,37 @@ div
       margin-left -(w/2)
       margin-top -(h/2)
       border-radius 5px
-      box-sizing border-size  
+      box-sizing border-size
+
+  &.taskList
+    position absolute 
+    top 25%
+    left 0
+    width 100%
+    box-sizing border-box
+    padding 20px
+    display flex
+    flex-wrap wrap
+    flex-direction row
+    align-items top
+
+    .task
+      position relative
+      width 300px
+      margin 20px 20px
+      border-radius 5px
+      padding 10px
+      padding-bottom 20px
+      background-color light_blue
+      color #fefefe
+    
+      .validationDot
+        position absolute
+        top 10px
+        left 10px
+        width 10px
+        height 10px
+        border-radius 50%
 
   &.popup
     position fixed
@@ -57,14 +87,3 @@ div
       .close
         z-index 99
         cursor pointer
-  
-  &.taskList
-    position absolute 
-    top 20%
-    left 40%
-
-    .task
-      margin-bottom 30px
-      background-color #eee
-      border-radius 5px
-      padding 10px 50px

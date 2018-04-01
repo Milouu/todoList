@@ -2,6 +2,19 @@ img.close {
   position: absolute;
   top: 5px;
   right: 5px;
+}
+img.close.closeNewTask {
   width: 40px;
   height: 40px;
+}
+img.close.deleteTask {
+  width: 20px;
+  height: 20px;
+}
+img.editTask {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  width: 20px;
+  height: 20px;
 }

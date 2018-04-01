@@ -3,6 +3,7 @@
   
   include 'includes/config.php';
   include 'includes/handle_taskform.php';
+  include 'includes/edit.php';
 
   if(isset($_SESSION['user']))
   {
@@ -46,6 +47,7 @@
         <a href="pages/sign_in.php" class="signinBtn">Sign in</a> 
       </div> 
     </header>  
+    <p class="explanations">Don't forget to sign in, or sign up if you don't have an account yet, if you want your tasks to be saved ! :)</p>
 
     <?php
     }
@@ -56,16 +58,25 @@
         <span class="welcome">Welcome <?= $_SESSION['user'] ?></span>
         <a href="functions/deconnection.php">Deconnection</a> 
       </div>
-    </header>  
+      </header>  
       <div class="taskList">
         <?php foreach($tasks as $task): ?>
+
         <div class="task">
           <a href="functions/deleteTask.php?task_id=<?= $task->id ?>">
-            <img src="assets/images/x.svg" alt="close" class="close">
-          </a>  
+            <img src="assets/images/xw.svg" alt="close" class="close deleteTask">
+          </a>
+          <a href="index.php?editTask_id=<?= $task->id ?>&title=<?= $task->title ?>&due_date=<?= $task->due_date ?>&content=<?= $task->content ?>">
+            <img src="assets/images/edit.svg" alt="edit" class="editTask">
+          </a>
+          <a href="functions/taskValidation.php?task_id=<?= $task->id ?>&task_validation=<?= $task->validated ?>"> 
+            <div class="validationDot" style=<?= $task->validated ?'background-color:#70CC40;':'background-color:#CC3631;' ?>></div>
+          </a> 
           <h3><?= $task->title ?></h3>
-          <span><?= $task->due_date != '0000-01-01' ? $task->due_date : '' ?></span>
+          <p class="due_date"><?= $task->due_date != '0000-01-01' ? 'Due for ' . $task->due_date : '' ?></p class="due_date">
+          <p class="taskContent"><?= $task->content ?></p>
         </div>
+
         <?php endforeach; ?> 
       </div>
 

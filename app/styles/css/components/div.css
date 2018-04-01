@@ -32,6 +32,36 @@ div.onePageForms.signinForm {
   border-radius: 5px;
   box-sizing: border-size;
 }
+div.taskList {
+  position: absolute;
+  top: 25%;
+  left: 0;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: top;
+}
+div.taskList .task {
+  position: relative;
+  width: 300px;
+  margin: 20px 20px;
+  border-radius: 5px;
+  padding: 10px;
+  padding-bottom: 20px;
+  background-color: light_blue;
+  color: #fefefe;
+}
+div.taskList .task .validationDot {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
 div.popup {
   position: fixed;
   top: calc(50% - 700px / 2);
@@ -54,15 +84,4 @@ div.popup.show {
 div.popup.show .close {
   z-index: 99;
   cursor: pointer;
-}
-div.taskList {
-  position: absolute;
-  top: 20%;
-  left: 40%;
-}
-div.taskList .task {
-  margin-bottom: 30px;
-  background-color: #eee;
-  border-radius: 5px;
-  padding: 10px 50px;
 }

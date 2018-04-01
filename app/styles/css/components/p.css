@@ -7,3 +7,22 @@ p.errorMessages {
 p.successMessages {
   color: #008000;
 }
+p.due_date {
+  font-family: title_font;
+  font-size: 15px;
+  color: #ff7f50;
+  text-align: center;
+}
+p.taskContent {
+  font-size: 15px;
+  color: #fefefe;
+  margin-top: 20px;
+}
+p.explanations {
+  margin-top: 300px;
+  margin-left: 20px;
+  margin-right: 20px;
+  font-size: 30px;
+  color: #ff7f50;
+  text-align: center;
+}
