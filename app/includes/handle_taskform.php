@@ -18,7 +18,7 @@
       $errorMessages[] = 'Missing title';
     } 
 
-    if(isset($due_date))
+    if(!empty($due_date))
     {
       if(!validateDate($due_date))
       {
@@ -31,23 +31,25 @@
       // Prepares INSERT INTO values
       $prepare = $pdo->prepare('
       INSERT INTO 
-        users (title, creation_date, due_date, content, user_id)
+        tasks (title, creation_date, due_date, content, user_id)
       VALUES
         (:title, :creation_date, :due_date, :content, :user_id)
       ');
 
       // Binds values to form data
-      $prepare->bindValue('title', $tile);
+      $prepare->bindValue('title', $title);
       $prepare->bindValue('creation_date', date('Y-m-d'));
-      $prepare->bindValue('due_date', $due_date);
+      $prepare->bindValue('due_date', !empty($due_date) ? $due_date : '0000-01-01');
       $prepare->bindValue('content', $content);
-      $prepare->bindValue('user_id', $_SESSION['id']);
+      $prepare->bindValue('user_id', isset($_SESSION['id']) ? $_SESSION['id'] : 0);
 
       $prepare->execute();
 
       $_POST['title'] = '';
       $_POST['due_date'] = '';
       $_POST['content'] = '';
+
+      header('Location: index.php');
     }
   }
   // Form not sent

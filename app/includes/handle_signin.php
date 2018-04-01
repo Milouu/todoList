@@ -1,6 +1,4 @@
 <?php
-  session_start();
-
   $query = $pdo->query('SELECT * FROM users');
   $users = $query->fetchAll();
 

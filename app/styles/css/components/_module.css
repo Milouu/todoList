@@ -12,8 +12,8 @@ a.newTaskBtn {
 }
 div.popup {
   position: fixed;
-  top: 50%;
-  left: 50%;
+  top: 30%;
+  left: 40%;
   border-radius: 5px;
   background-color: #ccc;
   opacity: 0;
@@ -23,9 +23,16 @@ div.popup {
 div.popup.show {
   opacity: 1;
 }
-div.popup img.closeNewTask {
-  margin-left: 90%;
-  cursor: pointer;
+div.taskList {
+  position: absolute;
+  top: 20%;
+  left: 40%;
+}
+div.taskList .task {
+  margin-bottom: 30px;
+  background-color: #eee;
+  border-radius: 5px;
+  padding: 10px 50px;
 }
 p {
   margin: 20px 10px;
@@ -35,4 +42,8 @@ p.errorMessages {
 }
 p.successMessages {
   color: #008000;
+}
+img.close {
+  margin-left: 90%;
+  cursor: pointer;
 }

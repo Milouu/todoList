@@ -1,8 +1,8 @@
 div
   &.popup
     position fixed
-    top 50%
-    left 50% 
+    top 30%
+    left 40% 
     border-radius 5px
     background-color #cccccc
     opacity 0
@@ -11,7 +11,14 @@ div
 
     &.show
       opacity 1 
+  
+  &.taskList
+    position absolute 
+    top 20%
+    left 40%
 
-    img.closeNewTask
-      margin-left 90%
-      cursor pointer
+    .task
+      margin-bottom 30px
+      background-color #eee
+      border-radius 5px
+      padding 10px 50px
